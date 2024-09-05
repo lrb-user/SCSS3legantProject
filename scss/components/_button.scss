@@ -137,9 +137,13 @@ $buttonShopNow : (
         line-height:rem(10);
     }
     .btn-sitemap{
-        @include background('ico_sitemap.svg', center);
-        width:rem(24);
-        height:rem(24);
+        display:none;
+        @include mobile{
+            display:block;
+            @include background('ico_sitemap.svg', center);
+            width:rem(24);
+            height:rem(24);
+        }
     }
 }
 

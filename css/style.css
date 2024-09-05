@@ -272,10 +272,16 @@
     line-height: 1rem;
   }
   .btn-sitemap {
-    background: url(../images/ico_sitemap.svg) no-repeat center;
-    background-size: contain;
-    width: 2.4rem;
-    height: 2.4rem;
+    display: none;
+  }
+  @media (1000px > width) {
+    .btn-sitemap {
+      display: block;
+      background: url(../images/ico_sitemap.svg) no-repeat center;
+      background-size: contain;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 }
 @layer Components.Bar {}
