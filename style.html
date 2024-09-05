@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 가이드</title>
+    <link rel="stylesheet" href="/css/guide.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <p style="background-color:red; color:white; font-size:18px;">(header) 장바구니랑 장바구니옆에 숫자 컴포넌트 한번만 봐주세요!</p>
+    <p style="background-color:skyblue; color:white; font-size:18px;">
+        한 페이지 내에서 h1 2번 쓰면 안되는걸로 알고있는데, 
+        이렇게 모바일용/ pc용 각각 따로 로고를 만들어야될 때 어떻게 해야될까여~?
+    </p>
+    <div class="top-banner">
+        <div></div>
+        <div class="top-banner__content">
+            <div>30% off storewide — Limited time!</div>
+            <a href="" class="btn-shopnow blue">Shop Now</a>
+        </div>
+        <button class="btn-close" aria-label="닫기"></button>
+    </div>
+    <header>
+        <div class="header mxauto">
+            <h1>
+                <button class="btn-sitemap" popovertarget="sitemap"></button>
+                <a href="" class="logo" aria-label="3legant"></a>
+            </h1>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="" class="--active">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Shop</a>
+                    </li>
+                    <li>
+                        <a href="">Product</a>
+                    </li>
+                    <li>
+                        <a href="">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="align">
+                <button class="btn-search" aria-label="검색"></button>
+                <button class="btn-user" aria-label="마이페이지"></button>
+                <div class="shoppingbag">
+                    <button class="btn-shoppingbag" aria-label="장바구니"></button>
+                    <span class="shopping-count">2</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sitemap" popover id="sitemap">
+        <div class="align both vm">
+            <h1><a href="" class="logo" aria-label="3legant"></a></h1>
+            <button class="btn-close" aria-label="닫기" popovertarget="sitemap"></button>
+        </div>
+        <nav class="sitemap__nav">
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <nav class="nav-ui">
+            <ul>
+                <li>
+                    <a href="#heading-type">Heading-type</a>
+                </li>
+                <li>
+                    <a href="#button">Button</a>
+                </li>
+                <li>
+                    <a href="#form">Form</a>
+                </li>
+            </ul>
+        </nav>
+        <details id="heading-type" open>
+            <summary>Heading-type</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1. heading-type</h2>
+                </div>
+            </div>
+        </details>
+        <details id="button" open>
+            <summary>Button</summary>
+            <div class="note">기본 btn 기본 클래스에 필요한 요소의 클래스를 추가하여 사용.</div>
+            <div class="guide-content">
+                <div>
+                    <h2>1. 기타</h2>
+                    <div class="component-content">
+                        <p style="background-color:red; color:white; font-size:18px;">(btn-shopnow)믹스인을 활용하여 코드를 짰는데 이 컴포넌트가 믹스인을 활용하는게 맞는지 또 믹스인 코드를 맞게 짰는지 잘 모르겠어요.</p>
+                        <a href="" class="btn-shopnow blue">Shop now</a>
+                        <a href="" class="btn-shopnow orange">Shop now</a>
+                        <a href="" class="btn-shopnow black">Shop now</a>
+                        <a href="" class="btn-shopnow white">Shop now</a>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="form" open>
+            <summary>Form</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1.search-type</h2>
+                    <div class="component-content">
+                        <p style="background-color:red; color:white; font-size:18px;">(search-type1)코드 한번만 봐주세요!</p>
+                        <div class="search-type1">
+                            <button class="btn-search" aira-label="검색"></button>
+                            <input type="text" placeholder="placeholder">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </main>
+</body>
+</html>

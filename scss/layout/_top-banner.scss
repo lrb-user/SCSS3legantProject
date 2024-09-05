@@ -1,0 +1,41 @@
+@use '../abstracts/' as *;
+
+@layer Layout.Topbanner{
+    // @mixin topBannerColor() {
+        .top-banner{
+            @include mobile{
+                justify-content: center;
+                gap:rem(14);
+            }
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            width:100%;
+            height:rem(40);
+            // padding:0 rem(16);
+            color: $gray34;
+            font-size: rem(14);
+            font-weight: 600;
+            line-height: rem(22);
+            box-sizing: border-box;
+            background-color:$grayf3;
+            &__content{
+                display:flex;
+                align-items: center;
+                gap:rem(12);
+                &::before{
+                    @include background('ico_ticket-percent.svg', center);
+                    content:"";
+                    display:inline-block;
+                    width:rem(24);
+                    height:rem(24);
+                }
+            }
+            .btn-shopnow{
+                @include mobile{
+                    display:none;
+                }
+            }
+        }     
+    // }
+}

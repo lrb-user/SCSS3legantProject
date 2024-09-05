@@ -1,0 +1,24 @@
+@use '../abstracts/' as *;
+
+@layer Layout.Gnb{
+    .gnb{
+        @include mobile{
+            display:none;
+        }
+        ul{
+            display:flex;
+        }
+        li{
+            a{
+                padding-inline:rem(20);
+                color: $gray6c;
+                font-size: rem(14);
+                font-weight: 500;
+                line-height: rem(24);
+                &.--active{
+                    color:$gray14;
+                }
+            }
+        }
+    }
+}

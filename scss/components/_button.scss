@@ -1,0 +1,145 @@
+@use 'sass:list';
+@use '../abstracts/' as *;
+
+//버튼 사이즈 정의
+$buttonSize :(
+    1: (
+        'className':'.base',
+        'height':40,
+        'fontSize':16,
+        'paddingInline':25,
+        'borderWidth': 1, 
+        'fontWeight': null,
+    ),
+);
+//버튼 색상 정의
+$buttonColor: (
+    1:(
+         'className': '.blue',
+         'bgColor': #000,
+         'color': #fff,
+         'borderColor': #000,
+    ),
+);
+//버튼 아이콘 정의
+$buttonIcon : (
+    1:(
+        'className': '.ico1',
+        'direction' : after,
+        'imgName' : 'ico_book.svg',
+        'width' : 16,
+        'height' : 16, 
+    ),
+);
+
+//기타
+// 1.btnShopNow 
+$buttonShopNow : (
+    1: (
+        'className': 'blue',
+        'color': $blue,
+        'bg': 'ico_next-blue.svg',
+    ),
+    2: (
+        'className': 'orange',
+        'color': $orange,
+        'bg': 'ico_next-orange.svg',
+    ),
+    3: (
+        'className': 'black',
+        'color': $black,
+        'bg': 'ico_next-black.svg',
+    ),
+    4: (
+        'className': 'white',
+        'color': $white,
+        'bg': 'ico_next-white.svg',
+    ),
+);
+
+@layer Components.Button{
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap:rem(8);
+        box-sizing: border-box;
+        &.fullSize{
+            width:100%;
+        }
+
+        @for $index from 1 through list.length($buttonIcon) {
+            @include buttonIcon($buttonIcon, $index); 
+        }
+        @for $index from 1 through list.length($buttonSize) {
+            @include buttonSize($buttonSize, $index);
+        }
+        @for $index from 1 through list.length($buttonColor) {
+            @include buttonColor($buttonColor, $index);
+        }
+    }
+    .btn-shopnow{
+        display:inline-flex;
+        align-items: center;
+        gap:rem(4);
+        font-size: rem(14);
+        font-weight: 500;
+        line-height: rem(24); 
+        &::after{
+            content:"";
+            display:inline-block;
+            width:rem(18);
+            height:rem(18);
+        }
+        @for $index from 1 through list.length($buttonShopNow) {
+            @include buttonShopNow($buttonShopNow, $index);
+        }
+    }
+    .btn-close{
+        @include background('ico_close.svg', center, null, rem(12) rem(12));
+        display:inline-block;
+        width:rem(44);
+        height:rem(40);
+    }
+    .btn-search{
+        @include background('ico_search.svg', center, null, rem(24) rem(24));
+        display:inline-block;
+        width:rem(24);
+        height:rem(24);
+    }
+    .btn-user{
+        @include background('ico_user.svg', center, null, rem(24) rem(24));
+        display:inline-block;
+        width:rem(40);
+        height:rem(60);
+    }
+    .btn-shoppingbag{
+        @include background('ico_shoppingbag.svg', center, null, rem(24) rem(24));
+        display:inline-block;
+        width:rem(40);
+        height:rem(60);
+    }
+    .shoppingbag{
+        display:flex;
+        align-items: center;
+    }
+    .shopping-count{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width:rem(20);
+        height:rem(20);
+        border-radius:50%;
+        background-color:$gray14;
+        color:$white;
+        font-size:rem(12);
+        font-weight:700;
+        line-height:rem(10);
+    }
+    .btn-sitemap{
+        @include background('ico_sitemap.svg', center);
+        width:rem(24);
+        height:rem(24);
+    }
+}
+

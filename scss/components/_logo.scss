@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+@layer Components.Logo{
+    .logo{
+        @include background('logo.svg', center);
+        display:inline-block;
+        width:rem(105);
+        height:rem(24);
+        @include mobile{
+            width:rem(70);
+            height:rem(24);
+        }
+    }
+}
