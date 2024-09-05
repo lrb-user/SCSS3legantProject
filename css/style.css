@@ -1,0 +1,655 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap") layer(CDNFont);
+@layer Reset, CDNFont, Typography, Components, Rounded, Layout;
+@layer Reset {
+  /* Reset */
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  div,
+  p,
+  blockquote,
+  pre,
+  code,
+  address,
+  ul,
+  ol,
+  li,
+  nav,
+  section,
+  article,
+  header,
+  footer,
+  main,
+  aside,
+  dl,
+  dt,
+  dd,
+  table,
+  thead,
+  tbody,
+  tfoot,
+  label,
+  caption,
+  th,
+  td,
+  form,
+  fieldset,
+  legend,
+  hr,
+  input,
+  button,
+  textarea,
+  object,
+  figure,
+  figcaption,
+  dialog {
+    margin: 0;
+    padding: 0;
+  }
+  body,
+  textarea,
+  button,
+  img,
+  fieldset,
+  dialog {
+    border: none;
+  }
+  textarea {
+    resize: none;
+  }
+  ul,
+  ol,
+  li {
+    list-style: none;
+  }
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  address,
+  cite,
+  code,
+  em,
+  i {
+    font-style: normal;
+    font-weight: normal;
+  }
+  u,
+  ins,
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  button {
+    cursor: pointer;
+    background-color: transparent;
+  }
+  /* Normalize */
+  input[type=number],
+  input[type=text],
+  input[type=password],
+  input[type=url],
+  input[type=email],
+  input[type=tel],
+  input[type=date],
+  textarea {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  input[type=search]::-webkit-search-decoration,
+  input[type=search]::-webkit-search-cancel-button,
+  input[type=search]::-webkit-search-results-button,
+  input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+  input[type=date] {
+    position: relative;
+  }
+  input[type=date]::-webkit-clear-button,
+  input[type=date]::-webkit-inner-spin-button {
+    display: none;
+  }
+  input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  input[type=date]::before {
+    content: attr(data-placeholder);
+    width: 100%;
+  }
+  input[type=date]:valid::before {
+    display: none;
+  }
+}
+@layer Typography {
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1rem;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+}
+@layer Components.Button {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-sizing: border-box;
+  }
+  .btn.fullSize {
+    width: 100%;
+  }
+  .btn.ico1::after {
+    background: url(../images/ico_book.svg) no-repeat;
+    background-size: contain;
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .btn.base {
+    height: 4rem;
+    font-size: 1.6rem;
+    padding-inline: 2.5rem;
+    border: 0.1rem solid;
+  }
+  .btn.blue {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+  }
+  .btn-shopnow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+  .btn-shopnow::after {
+    content: "";
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .btn-shopnow.blue {
+    color: #377dff;
+    border-bottom: 0.1rem solid #377dff;
+  }
+  .btn-shopnow.blue::after {
+    background: url(../images/ico_next-blue.svg) no-repeat center;
+    background-size: contain;
+  }
+  .btn-shopnow.orange {
+    color: #FFAB00;
+    border-bottom: 0.1rem solid #FFAB00;
+  }
+  .btn-shopnow.orange::after {
+    background: url(../images/ico_next-orange.svg) no-repeat center;
+    background-size: contain;
+  }
+  .btn-shopnow.black {
+    color: #000;
+    border-bottom: 0.1rem solid #000;
+  }
+  .btn-shopnow.black::after {
+    background: url(../images/ico_next-black.svg) no-repeat center;
+    background-size: contain;
+  }
+  .btn-shopnow.white {
+    color: #fff;
+    border-bottom: 0.1rem solid #fff;
+  }
+  .btn-shopnow.white::after {
+    background: url(../images/ico_next-white.svg) no-repeat center;
+    background-size: contain;
+  }
+  .btn-close {
+    background: url(../images/ico_close.svg) no-repeat center;
+    background-size: 1.2rem 1.2rem;
+    display: inline-block;
+    width: 4.4rem;
+    height: 4rem;
+  }
+  .btn-search {
+    background: url(../images/ico_search.svg) no-repeat center;
+    background-size: 2.4rem 2.4rem;
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .btn-user {
+    background: url(../images/ico_user.svg) no-repeat center;
+    background-size: 2.4rem 2.4rem;
+    display: inline-block;
+    width: 4rem;
+    height: 6rem;
+  }
+  .btn-shoppingbag {
+    background: url(../images/ico_shoppingbag.svg) no-repeat center;
+    background-size: 2.4rem 2.4rem;
+    display: inline-block;
+    width: 4rem;
+    height: 6rem;
+  }
+  .shoppingbag {
+    display: flex;
+    align-items: center;
+  }
+  .shopping-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #141718;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1rem;
+  }
+  .btn-sitemap {
+    background: url(../images/ico_sitemap.svg) no-repeat center;
+    background-size: contain;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+@layer Components.Bar {}
+@layer Components.Table {}
+@layer Components.Tab {}
+@layer Components.List {
+  .list-type4 {
+    color: #000;
+  }
+  .list-type4 li {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+  }
+  .list-type4 li::before {
+    display: inline-block;
+    margin: 1rem 0.4rem 0;
+    align-self: start;
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: #000;
+    border-radius: 10rem;
+  }
+}
+@layer Components.Table {
+  caption {
+    overflow: hidden;
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+.textarea, .select, .input {
+  padding-inline: 1.2rem;
+  height: 4rem;
+  border: 0.1rem solid #000;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #000;
+  font-size: 1.4rem;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+.textarea::placeholder, .select::placeholder, .input::placeholder {
+  color: #000;
+}
+.textarea:disabled, .select:disabled, .input:disabled {
+  background: rgba(0, 0, 0, 0.1);
+}
+[readonly].textarea, [readonly].select, [readonly].input {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.radio-type1 + label {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  color: #000;
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: -0.05rem;
+}
+
+@layer Components.Form {
+  .input {
+    width: var(--w, 100%);
+  }
+  .select {
+    background: url(../images/bg_select.svg) no-repeat right 1.2rem center;
+    background-size: contain;
+    padding-right: 3rem;
+    appearance: none;
+    width: var(--w, 100%);
+  }
+  .textarea {
+    width: 100%;
+    height: calc(var(--height, 10) / 10 * 1rem);
+    padding-block: 1.5rem;
+  }
+  .textarea::placeholder {
+    color: #000;
+    font-family: "Noto Sans KR";
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    letter-spacing: -0.05rem;
+  }
+  .search-type1 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    height: 4.6rem;
+    padding-inline: 1.6rem;
+    border: 0.1rem solid #6c7275;
+    border-radius: 0.6rem;
+    background-color: #fff;
+  }
+  .search-type1 input {
+    width: calc(100% - 2.4rem - 0.8rem);
+    height: 100%;
+    border: none;
+    background-color: #fff;
+  }
+  .search-type1 input::placeholder {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+  .radio-type1 {
+    overflow: hidden;
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  .radio-type1 + label::before {
+    background: url(../images/ico_radio_off.svg) no-repeat;
+    background-size: contain;
+    content: "";
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .radio-type1:checked + label::before {
+    background: url(../images/ico_radio_on.svg) no-repeat;
+    background-size: contain;
+  }
+}
+@layer Components.Rounded {
+  .rounded8 {
+    border-radius: 0.8rem;
+  }
+  .rounded-full {
+    border-radius: 100rem;
+  }
+}
+@layer Components.Board {}
+@layer Components.Sitemap {
+  .sitemap {
+    width: 100%;
+    height: 100%;
+    padding: 2.4rem;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition: 0.5s allow-discrete;
+    inset: 0rem 0 0 100%;
+  }
+  .sitemap:popover-open {
+    inset: 0 0 0 0%;
+  }
+  @starting-style {
+    .sitemap:popover-open {
+      inset: 0rem 0 0 100%;
+    }
+  }
+}
+@layer Components.Logo {
+  .logo {
+    background: url(../images/logo.svg) no-repeat center;
+    background-size: contain;
+    display: inline-block;
+    width: 10.5rem;
+    height: 2.4rem;
+  }
+  @media (1000px > width) {
+    .logo {
+      width: 7rem;
+      height: 2.4rem;
+    }
+  }
+}
+@layer Layout.Header {
+  .header {
+    anchor-name: --header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    background-color: #fff;
+  }
+  @media (1000px > width) {
+    .header {
+      padding-inline: 3.2rem;
+      box-sizing: border-box;
+    }
+  }
+  @media (1000px > width) {
+    .header h1 {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  }
+  .header .btn-search {
+    width: 4rem;
+    height: 6rem;
+  }
+  @media (1000px > width) {
+    .header .btn-search,
+    .header .btn-user {
+      display: none;
+    }
+  }
+}
+@layer Layout.Footer {}
+@layer Layout.IR {
+  .ally-hidden {
+    overflow: hidden;
+    position: absolute;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}
+@layer Layout.Align {
+  .align {
+    display: flex;
+  }
+  .align.right {
+    justify-content: flex-end;
+  }
+  .align.center {
+    justify-content: center;
+  }
+  .align.both {
+    justify-content: space-between;
+  }
+  .align.triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .align.triple > :nth-child(1) {
+    justify-self: start;
+  }
+  .align.triple > :nth-child(2) {
+    justify-self: center;
+  }
+  .align.triple > :nth-child(3) {
+    justify-self: end;
+  }
+  .align.vt {
+    align-items: flex-start;
+  }
+  .align.vm {
+    align-items: center;
+  }
+  .align.vb {
+    align-items: flex-end;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .mxauto {
+    width: 122.4rem;
+    margin-inline: auto;
+  }
+  @media (1000px > width) {
+    .mxauto {
+      width: 100%;
+    }
+  }
+}
+@layer Layout.Space {
+  .mt4 {
+    margin-top: 0.4rem;
+  }
+  .mt8 {
+    margin-top: 0.8rem;
+  }
+  .mr4 {
+    margin-right: 0.4rem;
+  }
+  .mr8 {
+    margin-right: 0.8rem;
+  }
+  .mb4 {
+    margin-bottom: 0.4rem;
+  }
+  .mb8 {
+    margin-bottom: 0.8rem;
+  }
+  .ml4 {
+    margin-left: 0.4rem;
+  }
+  .ml8 {
+    margin-left: 0.8rem;
+  }
+  .mxauto {
+    width: 112rem;
+    margin-inline: auto;
+  }
+  @media (1000px > width) {
+    .mxauto {
+      width: 100%;
+    }
+  }
+}
+.only-mobile {
+  display: none;
+}
+@media (1000px > width) {
+  .only-mobile {
+    display: block;
+  }
+}
+
+@layer Layout.Topbanner {
+  .top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    color: #343839;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2.2rem;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+  }
+  @media (1000px > width) {
+    .top-banner {
+      justify-content: center;
+      gap: 1.4rem;
+    }
+  }
+  .top-banner__content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .top-banner__content::before {
+    background: url(../images/ico_ticket-percent.svg) no-repeat center;
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  @media (1000px > width) {
+    .top-banner .btn-shopnow {
+      display: none;
+    }
+  }
+}
+@layer Layout.Gnb {
+  @media (1000px > width) {
+    .gnb {
+      display: none;
+    }
+  }
+  .gnb ul {
+    display: flex;
+  }
+  .gnb li a {
+    padding-inline: 2rem;
+    color: #6c7275;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+  }
+  .gnb li a.--active {
+    color: #141718;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
