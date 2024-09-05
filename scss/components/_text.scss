@@ -1,8 +1,19 @@
 @use '../abstracts/' as *;
 
-@layer Components.Table{
-    .text-type3{
-    
+@layer Components.Text{
+    .heading-type1{
+        @include mobile{
+            font-size:rem(34);
+            line-height:rem(38);
+            letter-spacing:rem(-0.6);
+        }
+        color: $black;
+        font-size: rem(40);
+        font-weight: 500;
+        line-height: rem(44);
+        letter-spacing: rem(-0.4);
     }
-}
+    .text-type3{
+    }
+};
 

@@ -57,6 +57,13 @@ $buttonShopNow : (
     ),
 );
 
+%btnSnsSize{
+    display:inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+$snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_youtube.svg';
+
 @layer Components.Button{
     .btn {
         display: inline-flex;
@@ -145,5 +152,27 @@ $buttonShopNow : (
             height:rem(24);
         }
     }
+    .sns-group{
+        display:flex;
+        gap:rem(24);
+    }
+    @each $sns, $icoSns in $snsList {
+        .btn-#{$sns}{
+            @include background($icoSns, center);
+            @extend %btnSnsSize;
+        }
+    }
+    // .btn-insta{
+    //     @include background('ico_insta.svg', center);
+    //     @extend %btnSnsSize;
+    // }
+    // .btn-facebook{
+    //     @include background('ico_facebook.svg', center);
+    //     @extend %btnSnsSize;
+    // }
+    // .btn-youtube{
+    //     @include background('ico_youtube.svg', center);
+    //     @extend %btnSnsSize;
+    // }
 }
 

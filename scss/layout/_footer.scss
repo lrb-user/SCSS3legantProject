@@ -1,7 +1,41 @@
 @use '../abstracts/' as *;
 
-@layer Layout.Footer{
+@layer Layout.Footer {
     .footer{
-        
+        padding-inline:rem(160);
+        background-color:$gray14;
+        color:$white;
+        .logo{
+            width:rem(105);
+            height:rem(24);
+        }
+        &__top{
+            @include text($graye8, null, rem(14), rem(22));
+            display:flex;
+            justify-content: space-between;
+            padding-block:rem(80) rem(57);
+        }
+        &__nav{
+            display:flex;
+            a{
+                padding-inline:rem(20);
+            }
+        }
+        &__bot{
+            display:flex;
+            justify-content: space-between;
+            padding-block:rem(20) rem(50);
+            border-top:rem(1) solid $gray6c;
+            &-info{
+                @include text($grayfe, null, rem(12), 600, rem(20));
+                display:flex;
+                gap:rem(28);
+            }
+            &-copy{
+                font-weight:400;
+            }
+        }
     }
 }
+
+

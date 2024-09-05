@@ -1,5 +1,7 @@
 @use '../abstracts/' as *;
 
 @layer Components.Bar{
-
+    .bar-type1{
+      @include bar(l, 1, 24, $gray6c, 65);  
+    }
 }

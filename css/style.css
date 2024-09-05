@@ -151,6 +151,12 @@
     font-family: "Noto Sans KR", sans-serif;
   }
 }
+.btn-youtube, .btn-facebook, .btn-insta {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 @layer Components.Button {
   .btn {
     display: inline-flex;
@@ -283,9 +289,56 @@
       height: 2.4rem;
     }
   }
+  .sns-group {
+    display: flex;
+    gap: 2.4rem;
+  }
+  .btn-insta {
+    background: url(../images/ico_insta.svg) no-repeat center;
+    background-size: contain;
+  }
+  .btn-facebook {
+    background: url(../images/ico_facebook.svg) no-repeat center;
+    background-size: contain;
+  }
+  .btn-youtube {
+    background: url(../images/ico_youtube.svg) no-repeat center;
+    background-size: contain;
+  }
 }
-@layer Components.Bar {}
-@layer Components.Table {}
+@layer Components.Bar {
+  .bar-type1 {
+    display: flex;
+    align-items: center;
+  }
+  .bar-type1 > * + * {
+    display: flex;
+    align-items: center;
+  }
+  .bar-type1 > * + *::before {
+    content: "";
+    width: 0.1rem;
+    height: 2.4rem;
+    margin-inline: 6.5rem;
+    background-color: #6c7275;
+  }
+}
+@layer Components.Text {
+  .heading-type1 {
+    color: #000;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 4.4rem;
+    letter-spacing: -0.04rem;
+  }
+  @media (1000px > width) {
+    .heading-type1 {
+      font-size: 3.4rem;
+      line-height: 3.8rem;
+      letter-spacing: -0.06rem;
+    }
+  }
+}
 @layer Components.Tab {}
 @layer Components.List {
   .list-type4 {
@@ -454,6 +507,10 @@
       height: 2.4rem;
     }
   }
+  .logo.white {
+    background: url(../images/logo_white.svg) no-repeat center;
+    background-size: contain;
+  }
 }
 @layer Layout.Header {
   .header {
@@ -488,7 +545,49 @@
     }
   }
 }
-@layer Layout.Footer {}
+@layer Layout.Footer {
+  .footer {
+    padding-inline: 16rem;
+    background-color: #141718;
+    color: #fff;
+  }
+  .footer .logo {
+    width: 10.5rem;
+    height: 2.4rem;
+  }
+  .footer__top {
+    color: #e8ecef;
+    font-size: 1.4rem;
+    font-weight: 2.2rem;
+    line-height: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 8rem 5.7rem;
+  }
+  .footer__nav {
+    display: flex;
+  }
+  .footer__nav a {
+    padding-inline: 2rem;
+  }
+  .footer__bot {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 2rem 5rem;
+    border-top: 0.1rem solid #6c7275;
+  }
+  .footer__bot-info {
+    color: #fefefe;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 2rem;
+    display: flex;
+    gap: 2.8rem;
+  }
+  .footer__bot-copy {
+    font-weight: 400;
+  }
+}
 @layer Layout.IR {
   .ally-hidden {
     overflow: hidden;

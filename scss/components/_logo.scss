@@ -10,5 +10,8 @@
             width:rem(70);
             height:rem(24);
         }
+        &.white{
+            @include background('logo_white.svg', center);
+        }
     }
 }
