@@ -7,62 +7,53 @@ $buttonSize :(
         'className':'.base',
         'height':40,
         'fontSize':16,
-        'paddingInline':25,
+        'paddingInline':40,
         'borderWidth': 1, 
-        'fontWeight': null,
+        'fontWeight': 500,
+    ),
+    2: (
+        'className':'.lg',
+        'height':46,
+        'fontSize':16,
+        'paddingInline':0,
+        'borderWidth': 1, 
+        'fontWeight': 500,
+    ),
+    3: (
+        'className':'.xlg',
+        'height':52,
+        'fontSize':18,
+        'paddingInline':0,
+        'borderWidth': 1, 
+        'fontWeight': 500,
     ),
 );
+
 //버튼 색상 정의
 $buttonColor: (
     1:(
-         'className': '.blue',
-         'bgColor': #000,
-         'color': #fff,
-         'borderColor': #000,
+         'className': '.black',
+         'bgColor': $gray14,
+         'color': $white,
+         'borderColor': $gray14,
+    ),
+    2:(
+         'className': '.black-outline',
+         'bgColor': $white,
+         'color': $gray14,
+         'borderColor': $gray14,
     ),
 );
 //버튼 아이콘 정의
 $buttonIcon : (
     1:(
         'className': '.ico1',
-        'direction' : after,
-        'imgName' : 'ico_book.svg',
-        'width' : 16,
-        'height' : 16, 
+        'direction' : before,
+        'imgName' : 'ico_heart-black.svg',
+        'width' : 24,
+        'height' : 24, 
     ),
 );
-
-//기타
-// 1.btnShopNow 
-$buttonShopNow : (
-    1: (
-        'className': 'blue',
-        'color': $blue,
-        'bg': 'ico_next-blue.svg',
-    ),
-    2: (
-        'className': 'orange',
-        'color': $orange,
-        'bg': 'ico_next-orange.svg',
-    ),
-    3: (
-        'className': 'black',
-        'color': $black,
-        'bg': 'ico_next-black.svg',
-    ),
-    4: (
-        'className': 'white',
-        'color': $white,
-        'bg': 'ico_next-white.svg',
-    ),
-);
-
-%btnSnsSize{
-    display:inline-block;
-    width:rem(24);
-    height:rem(24);
-}
-$snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_youtube.svg';
 
 @layer Components.Button{
     .btn {
@@ -74,6 +65,15 @@ $snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_yout
         &.fullSize{
             width:100%;
         }
+        //버튼 둥근정도
+        &.rounded{
+            border-radius: rem(8);
+        }
+        &.rounded-full{
+            border-radius: rem(1000);
+        }
+        //버튼 아이콘
+
 
         @for $index from 1 through list.length($buttonIcon) {
             @include buttonIcon($buttonIcon, $index); 
@@ -85,23 +85,70 @@ $snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_yout
             @include buttonColor($buttonColor, $index);
         }
     }
-    .btn-shopnow{
+    .btn-text{
         display:inline-flex;
         align-items: center;
         gap:rem(4);
-        font-size: rem(14);
-        font-weight: 500;
-        line-height: rem(24); 
+        padding-bottom: rem(4);
+        font-weight:500;
+        line-height:rem(24);
+        font-size:rem(16);
+        color:$gray14;
+        border-bottom:rem(1) solid $gray14; 
         &::after{
+            @include background('ico_next.svg', center);
             content:"";
             display:inline-block;
             width:rem(18);
             height:rem(18);
         }
-        @for $index from 1 through list.length($buttonShopNow) {
-            @include buttonShopNow($buttonShopNow, $index);
+        &.blue{
+            font-size:rem(14);
+            color:$blue;
+            border-bottom:rem(1) solid $blue;
+            &::after{
+                @include background('ico_next-blue.svg', center);
+            }
         }
     }
+    // .btn-shopnow{
+    //     display:inline-flex;
+    //     align-items: center;
+    //     gap:rem(4);
+    //     font-size: rem(14);
+    //     font-weight: 500;
+    //     line-height: rem(24); 
+    //     &::after{
+    //         content:"";
+    //         display:inline-block;
+    //         width:rem(18);
+    //         height:rem(18);
+    //     }
+    //     &.blue{
+    //         color:$blue;
+    //         &::after{
+    //             @include background('ico_next-blue.svg', center);
+    //         }
+    //     }
+    //     &.orange{
+    //         color:$orange;
+    //         &::after{
+    //             @include background('ico_next-orange.svg', center);
+    //         }
+    //     }
+    //     &.black{
+    //         color:$black;
+    //         &::after{
+    //             @include background('ico_next-black.svg', center);
+    //         }
+    //     }
+    //     &.white{
+    //         color:$white;
+    //         &::after{
+    //             @include background('ico_next-white.svg', center);
+    //         }
+    //     }
+    // }
     .btn-close{
         @include background('ico_close.svg', center, null, rem(12) rem(12));
         display:inline-block;
@@ -120,28 +167,49 @@ $snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_yout
         width:rem(40);
         height:rem(60);
     }
-    .btn-shoppingbag{
-        @include background('ico_shoppingbag.svg', center, null, rem(24) rem(24));
+    .btn-heart{
+        @include background('ico_heart.svg', center, $white, rem(20) rem(20));
         display:inline-block;
-        width:rem(40);
-        height:rem(60);
+        width:rem(32);
+        height:rem(32);
+        border-radius:50%;
+        box-shadow: $shadow1;
+        .list-type2 & {
+            position: absolute;
+            top:rem(16);
+            right:rem(16);
+        }
     }
+    .btn-addcart-wrap {
+        position: absolute;
+        bottom: rem(16);
+        width:100%;
+        padding-inline:rem(20);
+        box-sizing: border-box;
+    }
+
     .shoppingbag{
         display:flex;
         align-items: center;
-    }
-    .shopping-count{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        width:rem(20);
-        height:rem(20);
-        border-radius:50%;
-        background-color:$gray14;
-        color:$white;
-        font-size:rem(12);
-        font-weight:700;
-        line-height:rem(10);
+        &__count{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:rem(20);
+            height:rem(20);
+            border-radius:50%;
+            background-color:$gray14;
+            color:$white;
+            font-size:rem(12);
+            font-weight:700;
+            line-height:rem(10);
+        }
+        button{
+            @include background('ico_shoppingbag.svg', center, null, rem(24) rem(24));
+            display:inline-block;
+            width:rem(40);
+            height:rem(60);
+        }
     }
     .btn-sitemap{
         display:none;
@@ -152,27 +220,5 @@ $snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_yout
             height:rem(24);
         }
     }
-    .sns-group{
-        display:flex;
-        gap:rem(24);
-    }
-    @each $sns, $icoSns in $snsList {
-        .btn-#{$sns}{
-            @include background($icoSns, center);
-            @extend %btnSnsSize;
-        }
-    }
-    // .btn-insta{
-    //     @include background('ico_insta.svg', center);
-    //     @extend %btnSnsSize;
-    // }
-    // .btn-facebook{
-    //     @include background('ico_facebook.svg', center);
-    //     @extend %btnSnsSize;
-    // }
-    // .btn-youtube{
-    //     @include background('ico_youtube.svg', center);
-    //     @extend %btnSnsSize;
-    // }
 }
 

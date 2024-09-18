@@ -2,16 +2,49 @@
 
 @layer Components.Text{
     .heading-type1{
-        @include mobile{
-            font-size:rem(34);
-            line-height:rem(38);
-            letter-spacing:rem(-0.6);
-        }
         color: $black;
         font-size: rem(40);
         font-weight: 500;
         line-height: rem(44);
         letter-spacing: rem(-0.4);
+        @include mobile{
+            font-size:rem(34);
+            line-height:rem(38);
+            letter-spacing:rem(-0.6);
+        }
+    }
+    .heading-type2{
+        color:$gray23;
+        font-size:rem(28);
+        font-weight:500;
+        line-height:rem(34);
+        letter-spacing:rem(-0.6);
+        @include mobile{
+            font-size:rem(20);
+            line-height:rem(28);
+        }
+    }
+    .heading-type3{
+        color:$black;
+        font-size:rem(20);
+        font-weight:600;
+        line-height:rem(32);
+        @include mobile{
+            font-size:rem(16);
+            line-height:rem(26);
+        }
+    }
+    .heading-type4{
+        color:$black;
+        font-size:rem(54);
+        font-weight:500;
+        line-height:rem(58);
+        letter-spacing: rem(-1);
+        @include mobile{
+            font-size:rem(40);
+            line-height:rem(44);
+            letter-spacing: rem(-0.4);
+        }
     }
     .text-type3{
     }

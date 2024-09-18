@@ -1,52 +1,56 @@
-main{
-    padding:30px;
-    box-sizing: border-box;
-}
-details{
-    color:#222;
-}
-summary{
-    position:relative;
-    padding:10px 0;
-    font-size:20px;
-    font-weight:600;
-    // &::after{
-    //     content:"";
-    //     position:absolute;
-    //     bottom:0;
-    //     left:0;
-    //     width:240px;
-    //     height:1px;
-    //     background-color:#222;
-    // }
-}
-.nav-ui{
-    ul{
-        display:flex;
-        gap:8px;
-        padding:20px 0;
+@use "layer" as *;
+
+@layer Guide{
+    main{
+        padding:30px;
+        box-sizing: border-box;
     }
-    li{
-        background-color:#eee;
+    details{
+        color:#222;
     }
-    a{
-        display:inline-block;
-        padding:8px 20px;
+    summary{
+        position:relative;
+        padding:10px 0;
+        font-size:20px;
+        font-weight:600;
+        // &::after{
+        //     content:"";
+        //     position:absolute;
+        //     bottom:0;
+        //     left:0;
+        //     width:240px;
+        //     height:1px;
+        //     background-color:#222;
+        // }
+    }
+    .nav-ui{
+        ul{
+            display:flex;
+            gap:8px;
+            padding:20px 0;
+        }
+        li{
+            background-color:#eee;
+        }
+        a{
+            display:inline-block;
+            padding:8px 20px;
+            font-size:14px;
+            font-weight:500;
+        }
+    }
+    .guide-content{
+        padding:10px 15px;
+    }
+    .component-content{
+        padding:10px 0;
+    }
+    .note{
+        padding:20px 10px;
         font-size:14px;
-        font-weight:500;
+        background-color:#f9f4f4;
     }
-}
-.guide-content{
-    padding:10px 15px;
-}
-.component-content{
-    padding:10px 0;
-}
-.note{
-    padding:20px 10px;
-    font-size:14px;
-    background-color:#f9f4f4;
-}
-h2{
-    font-size:14px;
+    h2{
+        font-size:14px;
+    }
 }

@@ -1,0 +1,28 @@
+@use '../abstracts/' as *;
+@layer Component.Breadcrumbs{
+    .breadcrumbs{
+        display:flex;
+        gap:rem(16);
+        > div{
+            display:inline-flex;
+            align-items: center;
+            gap:rem(4);
+            color:$gray60;
+            font-size:rem(14);
+            font-weight:500;
+            line-height:rem(24);
+            &::after{
+                content:"";
+                width:rem(12);
+                height:rem(12);
+                @include background('ico_breadcrumbs1.svg', center);
+            }
+            &:last-child{
+                color:$black12;
+                &::after{
+                    background-image: none;
+                }
+            }
+        }
+    }
+}

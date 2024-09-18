@@ -3,10 +3,6 @@
 @layer Layout.Topbanner{
     // @mixin topBannerColor() {
         .top-banner{
-            @include mobile{
-                justify-content: center;
-                gap:rem(14);
-            }
             display:flex;
             justify-content: space-between;
             align-items:center;
@@ -19,6 +15,10 @@
             line-height: rem(22);
             box-sizing: border-box;
             background-color:$grayf3;
+            @include mobile{
+                justify-content: center;
+                gap:rem(14);
+            }
             &__content{
                 display:flex;
                 align-items: center;

@@ -1,0 +1,54 @@
+@use '../abstracts/' as *;
+
+@layer Components.Banner{
+    .adver-banner{
+        display:grid;
+        grid-template-columns: 720px 1fr;
+        align-items: center;
+        gap:rem(72);
+        @include mobile{
+            grid-template-columns: none;
+            gap:rem(58);
+            &__img{
+                img{
+                    width:100%;
+                }
+            }
+            &__content{
+                padding-inline:rem(32);
+                box-sizing: border-box;
+            }
+        }
+        &__subtitle{
+            color:$blue;
+            font-size:rem(16);
+            font-weight:700;
+            line-height:rem(16);
+        }
+        &__title{
+            margin-block:rem(16);
+            color:$gray14;
+            font-size:rem(40);
+            font-weight:500;
+            line-height:rem(44);
+            letter-spacing: rem(-0.4);
+            @include mobile{
+                font-size:rem(34);
+                line-height:rem(38);
+                letter-spacing: rem(-0.6);
+            }
+        }
+        &__desc{
+            p{
+                color:$gray14;
+                font-size:rem(20);
+                line-height:rem(32);
+                @include mobile{
+                    font-size:rem(16);
+                    line-height:rem(26);
+                }
+            }
+        }
+    }
+}
+

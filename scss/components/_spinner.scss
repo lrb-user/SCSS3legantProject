@@ -1,0 +1,32 @@
+@use '../abstracts/' as*;
+
+@layer Components.Spinner{
+    .spinner{
+        display:grid;
+        grid-template-columns: rem(20) 1fr rem(20);
+        width:rem(130);
+        padding:rem(12) rem(16);
+        box-sizing: border-box;
+        border-radius:rem(8);
+        background-color:$grayf5;
+        &__minus{
+            @include background('ico_minus.svg', center);
+            width:rem(20);
+            height:rem(20);
+        }
+        &__num{
+            width:rem(58);
+            text-align: center;
+            border: none;
+            color:$black12;
+            font-weight:600;
+            line-height:rem(26);
+            background-color:$grayf5;
+        }
+        &__plus{
+            width:rem(20);
+            height:rem(20);
+            @include background('ico_plus.svg', center);
+        }
+    }
+}

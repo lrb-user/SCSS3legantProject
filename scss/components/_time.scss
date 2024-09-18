@@ -1,0 +1,33 @@
+@use '../abstracts/' as*;
+
+@layer Components.Time{
+    .time-info1{
+        &__title{
+            color:$gray34;
+            font-size:rem(16);
+            line-height:rem(26);
+        }
+        &__content{
+            display:flex;
+            gap:rem(16);
+            margin-top:rem(12);
+        }
+        &__time{
+            p{
+                text-align: center;
+                color:$gray6c;
+                font-size:rem(12);
+                line-height:rem(20);
+            }
+        }
+        &__item{
+            padding:rem(10);
+            background-color:$grayf3;
+            color:$gray14;
+            font-size:rem(34);
+            font-weight:500;
+            line-height:rem(38);
+            letter-spacing: rem(-0.6);
+        }
+    }
+}

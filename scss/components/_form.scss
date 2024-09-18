@@ -37,7 +37,7 @@ $radioChkSettings: (
 );
 
 %form{
-    padding-inline:rem(12);
+    padding-inline:rem(16);
     height:map-get($formSettings, height);
     border:map-get($formSettings, border);
     border-radius: map-get($formSettings, borderRadius);

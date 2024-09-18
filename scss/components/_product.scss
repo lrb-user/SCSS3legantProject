@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+@layer Components.Product{
+    .product-info-name1{
+        color:$gray14;
+        font-size:rem(40);
+        font-weight:500;
+        line-height:rem(44);
+        letter-spacing: rem(-0.4);
+    }
+    .product-info-desc1{
+        color:$gray6c;
+        font-size:rem(16);
+        line-height:rem(26);
+    }
+    .product-info-price1{
+        .price{
+            color:$black12;
+            font-size:rem(28);
+        }
+        .ori-price{
+            color:$gray6c;
+            font-size:rem(20);
+            font-weight:500;
+            line-height:rem(28);
+            text-decoration: line-through;
+        }
+    }
+}
+

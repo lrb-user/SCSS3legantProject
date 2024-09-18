@@ -1,5 +1,13 @@
 @use '../abstracts/' as *;
 
+$snsList : insta 'ico_insta.svg', facebook 'ico_facebook.svg', youtube 'ico_youtube.svg';
+
+%btnSnsSize{
+    display:inline-block;
+    width:rem(24);
+    height:rem(24);
+}
+
 @layer Layout.Footer {
     .footer{
         padding-inline:rem(160);
@@ -33,6 +41,16 @@
             }
             &-copy{
                 font-weight:400;
+            }
+        }
+        .sns-group{
+            display:flex;
+            gap:rem(24);
+        }
+        @each $sns, $icoSns in $snsList {
+            .btn-#{$sns}{
+                @include background($icoSns, center);
+                @extend %btnSnsSize;
             }
         }
     }

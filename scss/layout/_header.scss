@@ -2,16 +2,16 @@
 
 @layer Layout.Header{
     .header{
-        @include mobile{
-            padding-inline:rem(32);
-            box-sizing: border-box;
-        }
         anchor-name:--header;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height:rem(60);
         background-color:$white;
+        @include mobile{
+            padding-inline:rem(32);
+            box-sizing: border-box;
+        }
         h1{
             @include mobile{
                 display:flex;

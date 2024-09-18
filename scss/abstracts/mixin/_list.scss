@@ -1,6 +1,6 @@
 @use '../function' as *;
 
-
+//bullet + list 유형
 @mixin listStyle($varName, $index) {
     #{map-get($varName, $index, className)} {
         color: map-get($varName, $index, color);

@@ -1,5 +1,22 @@
 @use '../abstracts/' as *;
 
 @layer Components.Tab{
-
+    .tab-type1{
+        border-bottom:rem(1) solid $graye8;
+        > ul{
+            display:flex;
+            gap:rem(80);
+        }
+        li{
+            color:$gray80;
+            font-size:rem(18);
+            font-weight:500;
+            line-height:rem(32);
+            letter-spacing: rem(-0.4);
+            &.--active{
+                color:$black12;
+                border-bottom:rem(1) solid $black12;
+            }
+        }
+    }
 }

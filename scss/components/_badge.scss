@@ -1,0 +1,63 @@
+@use 'sass:list';
+@use '../abstracts/' as *;
+
+//버튼 사이즈 정의
+$badgeSize :(
+    1: (
+        'className':'.base',
+        'height':24,
+        'fontSize':16,
+        'paddingInline':14,
+        'borderWidth': 1, 
+        'fontWeight': 700,
+    ),
+    2: (
+        'className':'.lg',
+        'height':34,
+        'fontSize':18,
+        'paddingInline':18,
+        'borderWidth': 1, 
+        'fontWeight': 700,
+    ),
+);
+//버튼 색상 정의
+$badgeColor: (
+    1:(
+         'className': '.white',
+         'bgColor': $white,
+         'color': $gray14,
+         'borderColor': $white,
+    ),
+    2:(
+         'className': '.green',
+         'bgColor': $green,
+         'color': $white,
+         'borderColor': $green,
+    ),
+);
+
+@layer Components.Badge{
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius:rem(4);
+
+        @for $index from 1 through list.length($badgeSize) {
+            @include buttonSize($badgeSize, $index);
+        }
+        @for $index from 1 through list.length($badgeColor) {
+            @include buttonColor($badgeColor, $index);
+        }
+    }
+    .badge-group {
+        .list-type2 & {
+            display:grid;
+            gap:rem(8);
+            position: absolute;
+            top:rem(16);
+            left:rem(16);
+        }
+    }
+}
+

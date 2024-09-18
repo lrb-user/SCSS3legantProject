@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <p style="background-color:red; color:white; font-size:18px;">(header) 장바구니랑 장바구니옆에 숫자 컴포넌트 한번만 봐주세요!</p>
-    <p style="background-color:skyblue; color:white; font-size:18px;">
-        한 페이지 내에서 h1 2번 쓰면 안되는걸로 알고있는데, 
-        이렇게 모바일용/ pc용 각각 따로 로고를 만들어야될 때 어떻게 해야될까여~?
-    </p>
     <div class="top-banner">
         <div></div>
         <div class="top-banner__content">
@@ -47,8 +42,8 @@
                 <button class="btn-search" aria-label="검색"></button>
                 <button class="btn-user" aria-label="마이페이지"></button>
                 <div class="shoppingbag">
-                    <button class="btn-shoppingbag" aria-label="장바구니"></button>
-                    <span class="shopping-count">2</span>
+                    <button aria-label="장바구니"></button>
+                    <span class="shoppingbag__count">2</span>
                 </div>
             </div>
         </div>
@@ -82,55 +77,406 @@
                     <a href="#heading-type">Heading-type</a>
                 </li>
                 <li>
+                    <a href="#tab">Tab</a>
+                </li>
+                <li>
                     <a href="#button">Button</a>
+                </li>
+                <li>
+                    <a href="#badge">Badge</a>
+                </li>
+                <li>
+                    <a href="#breadcrumbs">Breadcrumbs</a>
+                </li>
+                <li>
+                    <a href="#product">Product</a>
+                </li>
+                <li>
+                    <a href="#time">Time</a>
+                </li>
+                <li>
+                    <a href="#list">list</a>
                 </li>
                 <li>
                     <a href="#form">Form</a>
                 </li>
+                <li>
+                    <a href="#ect">Ect</a>
+                </li>
             </ul>
         </nav>
-        <details id="heading-type" open>
+        <details id="heading-type">
             <summary>Heading-type</summary>
             <div class="guide-content">
                 <div>
                     <div class="component-content">
                         <h2 class="heading-type1">.heading-type1</h2>
-                    </div>
-                </div>
-            </div>
-        </details>
-        <details id="button" open>
-            <summary>Button</summary>
-            <div class="note">기본 btn 기본 클래스에 필요한 요소의 클래스를 추가하여 사용.</div>
-            <div class="guide-content">
-                <div>
-                    <h2>1. 기타</h2>
-                    <div class="component-content">
-                        <p style="background-color:red; color:white; font-size:18px;">(btn-shopnow)믹스인을 활용하여 코드를 짰는데 이 컴포넌트가 믹스인을 활용하는게 맞는지 또 믹스인 코드를 맞게 짰는지 잘 모르겠어요.</p>
-                        <a href="" class="btn-shopnow blue">Shop now</a>
-                        <a href="" class="btn-shopnow orange">Shop now</a>
-                        <a href="" class="btn-shopnow black">Shop now</a>
-                        <a href="" class="btn-shopnow white">Shop now</a>
+                        <h2 class="heading-type2">.heading-type2</h2>
+                        <h2 class="heading-type3">.heading-type3</h2>
+                        <h2 class="heading-type4">.heading-type4</h2>
                     </div>
                 </div>
             </div>
         </details>
 
-        <details id="form" open>
+        <details id="tab">
+            <summary>Tab</summary>
+            <div>
+                <div class="guide-content">
+                    <div>
+                        <h2>1.tab-type1</h2>
+                        <nav class="tab-type1">
+                            <ul>
+                                <li>
+                                    <button>Additional Info</button>
+                                </li>
+                                <li>
+                                    <button>Questions</button>
+                                </li>
+                                <li class="--active">
+                                    <button>Reviews</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="button">
+            <summary>Button</summary>
+            <div class="note">기본 btn 기본 클래스에 필요한 요소의 클래스를 추가하여 사용.</div>
+            <div class="guide-content">
+                <div>
+                    <h2>사이즈</h2>
+                    <button class="btn base black">.base</button>
+                    <button class="btn lg black">.lg</button>
+                    <button class="btn xlg black">.xlg</button>
+                </div>
+                <div>
+                    <h2>색상</h2>
+                    <button class="btn base black">.black</button>
+                    <button class="btn base black-outline">.black-outline</button>
+                </div>
+                <div>
+                    <h2>둥근정도</h2>
+                    <button class="btn base rounded">.rounded</button>
+                    <button class="btn base rounded-full">.rounded-full</button>
+                </div>
+                <div>
+                    <h2>아이콘</h2>
+                    <button class="ico1 btn xlg black-outline rounded">Wishlist</button>
+                </div>
+                <div>
+                    <h2>기타</h2>
+                    <div class="component-content">
+                        <a href="" class="btn-text blue">Shop now</a>
+                        <a href="" class="btn-text">Shop now</a>
+                        <button class="btn-heart" aria-label="좋아요"></button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="badge">
+            <summary>Badge</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1.사이즈</h2>
+                    <span class="badge base green">.base</span>
+                    <span class="badge lg green">.lg</span>
+                </div>
+                <div>
+                    <h2>2.색상</h2>
+                    <span class="badge base green">.green</span>
+                    <span class="badge base white">.white</span>
+                </div>
+            </div>
+        </details>
+
+        <details id="breadcrumbs">
+            <summary>Breadcrumbs</summary>
+            <div class="guide-content"></div>
+                <div>
+                    <h2>1.breadcrumbs</h2>
+                    <div class="component-content">
+                        <div class="breadcrumbs">
+                            <div>Home</div>
+                            <div>Home</div>
+                            <div>Home</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="product">
+            <summary>Product</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1.product-info</h2>
+                    <div class="product-info-name1">.product-info-name1</div>
+                    <div class="product-info-desc1">
+                        Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.
+                    </div>
+                    <div class="product-info-price1">
+                        <span class="price">$199.00</span>
+                        <span class="ori-price">$400.00</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="profile">
+            <summary>Profile</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1.review</h2>
+                    <div class="review">
+                        <div class="profile-img">
+                            <img src="images/@img_profile.png" alt="sofia Harvetz 프로필">
+                        </div>
+                        <div class="profile-name">Sofia Harvetz</div>
+                        <div class="mt16">
+                            <span class="rating"></span>
+                            <span class="rating"></span>
+                            <span class="rating"></span>
+                            <span class="rating"></span>
+                            <span class="rating"></span>
+                        </div>
+                        <div class="review__content mt16">
+                            I bought it 3 weeks ago and now come back just to say “Awesome Product”. I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident.
+                        </div>
+                        <div class="review__comment mt24">
+                            <div>about 1 hour ago</div>
+                            <button>Like</button>
+                            <button>Replay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="time">
+            <summary>Time</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1.Time-info1</h2>
+                    <div class="time-info1">
+                        <div class="time-info1__title">Offer expires in:</div>
+                        <div class="time-info1__content">
+                            <div class="time-info1__time">
+                                <div id="days" class="time-info1__item">02</div>
+                                <p>Days</p>
+                            </div>
+                            <div class="time-info1__time">
+                                <div id="hours" class="time-info1__item">02</div>
+                                <p>Hours</p>
+                            </div>
+                            <div class="time-info1__time">
+                                <div id="minutes" class="time-info1__item">02</div>
+                                <p>Minutes</p>
+                            </div>
+                            <div class="time-info1__time">
+                                <div id="seconds" class="time-info1__item">02</div>
+                                <p>Seconds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details id="list">
+            <summary>List</summary>
+            <div class="guide-content">
+                <div>
+                    <h2>1.list-type1</h2>
+                    <ul class="list-type1">
+                        <li>
+                            <div class="list-type1__img delivery"></div>
+                            <div class="list-type1__title">Free Shipping</div>
+                            <div class="list-type1__desc">Order above $200</div>
+                        </li>
+                        <li>
+                            <div class="list-type1__img money"></div>
+                            <div class="list-type1__title">Money-back</div>
+                            <div class="list-type1__desc">30 days guarantee</div>
+                        </li>
+                        <li>
+                            <div class="list-type1__img lock"></div>
+                            <div class="list-type1__title">Secure Payments</div>
+                            <div class="list-type1__desc">Secured by Stripe</div>
+                        </li>
+                        <li>
+                            <div class="list-type1__img call"></div>
+                            <div class="list-type1__title">24/7 Support</div>
+                            <div class="list-type1__desc">Phone and Email support</div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>2.list-type2 (swiper + list)</h2>
+                    <h3>2-1. list</h3>
+                    <ul class="list-type2">
+                       <li>
+                            <div class="product-list-thumb">
+                                <a href=""  class="product-list-img">
+                                    <img src="images/img_product1.png" alt="쇼파">
+                                </a>
+                                <div>
+                                    <div class="badge-group">
+                                        <span class="badge base white">NEW</span>
+                                        <span class="badge base green">-50%</span>
+                                    </div>
+                                    <button class="btn-heart" aria-label="좋아요"></button>
+                                    <div class="btn-addcart-wrap">
+                                        <a href="" class="btn black lg rounded fullSize">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-list-content mt12"> 
+                                <div>
+                                    <span class="rating"></span>
+                                    <span class="rating"></span>
+                                    <span class="rating"></span>
+                                    <span class="rating"></span>
+                                    <span class="rating"></span>
+                                </div>
+                                <div class="product-list-name1">product-name1</div>
+                                <div class="product-list-price1">
+                                    <span class="price">$199.00</span>
+                                    <span class="ori-price">$400.00</span>
+                                </div>
+                            </div>
+                       </li> 
+                    </ul>
+                </div>
+                <div>
+                    <h2>3.list-type3</h2>
+                    <h3 style="display:inline-block; background-color:yellow;">ver-btn</h3>
+                    <ul class="list-type3">
+                        <li>
+                            <div class="list-type3__thumb">
+                                <img src="/images/img_article.png" alt="서재">
+                            </div>
+                            <div class="list-type3__content">
+                                <div class="list-type3__title">7 ways to decor your home</div>
+                                <a href="" class="mt8">Read More</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-type3__thumb">
+                                <img src="/images/img_article.png" alt="서재">
+                            </div>
+                            <div class="list-type3__content">
+                                <div class="list-type3__title">7 ways to decor your home</div>
+                                <a href="" class="mt8">Read More</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-type3__thumb">
+                                <img src="/images/img_article.png" alt="서재">
+                            </div>
+                            <div class="list-type3__content">
+                                <div class="list-type3__title">7 ways to decor your home</div>
+                                <a href="" class="mt8">Read More</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3 style="display:inline-block; background-color:yellow;">ver-date-text</h3>
+                    <ul class="list-type3">
+                        <li>
+                            <div class="list-type3__thumb">
+                                <img src="/images/img_article.png" alt="서재">
+                            </div>
+                            <div class="list-type3__content">
+                                <div class="list-type3__title">7 ways to decor your home</div>
+                                <div class="list-type3__date mt8">October 16, 2023</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-type3__thumb">
+                                <img src="/images/img_article.png" alt="서재">
+                            </div>
+                            <div class="list-type3__content">
+                                <div class="list-type3__title">7 ways to decor your home</div>
+                                <div class="list-type3__date mt8">October 16, 2023</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list-type3__thumb">
+                                <img src="/images/img_article.png" alt="서재">
+                            </div>
+                            <div class="list-type3__content">
+                                <div class="list-type3__title">7 ways to decor your home</div>
+                                <div class="list-type3__date mt8">October 16, 2023</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </details>
+
+        <details id="form">
             <summary>Form</summary>
             <div class="guide-content">
                 <div>
                     <h2>1.search-type</h2>
                     <div class="component-content">
-                        <p style="background-color:red; color:white; font-size:18px;">(search-type1)코드 한번만 봐주세요!</p>
                         <div class="search-type1">
                             <button class="btn-search" aira-label="검색"></button>
                             <input type="text" placeholder="placeholder">
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h2>1.select-type</h2>
+                    <div class="component-content">
+                        <select class="select-type1">
+                            <option>Newest</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </details>
+
+        <details id="ect">
+            <summary>Ect</summary>
+            <div class="guide-content"></div>
+                <div>
+                    <h2>1.광고 배너</h2>
+                    <div class="component-content">
+                        <div class="adver-banner">
+                            <div class="adver-banner__img">
+                                <img src="images/@img_ad.png" alt="">
+                            </div>
+                            <div class="adver-banner__content">
+                                <div class="adver-banner__subtitle">SALE UP TO 35% OFF</div>
+                                <div class="adver-banner__title">
+                                    HUNDREDS of 
+                                    New lower prices!
+                                </div>
+                                <div class="adver-banner__desc">
+                                    <p>It’s more affordable than ever to give every </p>
+                                    <p>room in your home a stylish makeover</p>
+                                </div>
+                                <a href="" class="btn-text mt24">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>1.spinner</h2>
+                    <div class="spinner">
+                        <button class="spinner__minus" aria-label="마이너스"></button>
+                        <input type="text" value="1" readonly class="spinner__num"></input>
+                        <button class="spinner__plus" aria-label="플러스"></button>
+                    </div>
+                </div>
+            </div>
+        </details>
+
     </main>
     <footer class="footer">
         <div class="footer__top">
